@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Redirecting...</title></head>
+<body>
+<script>
+  // Twitch sends the token in the URL hash after login.
+  // We bounce it straight to the app's deep link scheme.
+  var hash = window.location.hash;
+  if (hash) {
+    window.location.replace("assembleapp://auth" + hash);
+  } else {
+    document.body.innerText = "No token found. Please try again.";
+  }
+</script>
+<p>Redirecting back to the app...</p>
+</body>
+</html>
